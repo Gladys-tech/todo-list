@@ -39,18 +39,20 @@ const Todo: NextPage = () => {
   
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Todo
+            My Daily Todo List
           </h1>
           <div className={styles.grid}>
             <div className={styles.card}>
-              <ul>
+              <h3>Click the box to Remove</h3>
+              <ol>
                 {todoList.map((todoItem) => (
                   <li key={todoItem}>
-                    <input type="checkbox" onChange={ (e) => markTodoItem(todoItem, e.target.checked) } />
+                    {/* click on the box to delete */}
+                    <input type="checkbox" value="x"onChange={ (e) => markTodoItem(todoItem, e.target.checked) } />
                     <span>{todoItem}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
             <div className={styles.card}>
               <h2>Add New Item</h2>
